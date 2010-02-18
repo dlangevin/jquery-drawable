@@ -1,1 +1,24 @@
-This will be the README for jQuery UI Drawable
+jQuery UI plugin allowing you to draw a proxy over a given area.
+
+Once your proxy is drawn (mouse is released) you can determine what elements your proxy overlaps and 
+apply your callbacks accordingly.
+
+Options:
+  padding -       Integer or Object {top : x, bottom : x, left : x, right : x}
+                  Padding applied to the "drawable" area.  Proxy will not be drawn over the padded area
+
+  grid -          [x,y]
+                  Minimum distance that the mouse must move to trigger a resize.  This is useful for creating rows and 
+                  columns, especially if they do not yet exist in the DOM
+                  
+  allow_resize -  Define a function that returns a boolean whether or not the proxy can be resized to the current mouse
+                  position.  Allows for more fine-grained control of what behavior is allowed by your application
+
+Events:
+  proxy_create -  Triggered when the drawing proxy is created.  A common use would be to apply styles to the proxy
+                  based on the current state of the page
+  
+  drawn -         Triggered when the mouse is released.  At this point you can determine what the user has selected and 
+                  can have your application respond accordingly
+  
+                  
