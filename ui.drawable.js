@@ -1,11 +1,13 @@
+(function($){
 /**
+ * @class jQuery.ui.drawable
+ * @extends jQuery.ui.mouse
  * Draw new blocks dragging across multiple columns and then creating a single block and repainting
  * Implemented as a jQuery UI plugin
  */
-(function($){
 $.widget("ui.drawable",$.extend({},$.ui.mouse,{
   /**
-   * @constructor
+   * @constructor {jQuery.ui.drawable} _init
    * Initialize the element, add a class and call _mouseInit() 
    */
   _init : function(){
@@ -14,10 +16,12 @@ $.widget("ui.drawable",$.extend({},$.ui.mouse,{
     this._mouseInit();
   },
   /**
+   *  @function {protected jQuery.ui.drawable} _mouseStart
    *  Implementation of _mouseStart
    *  Create our drag proxy and position it according to the mouse position
    *  Also record the original position
-   *  @param event (Event)
+   *  @param {Event} event
+   *  jQuery UI event object
    */
   _mouseStart : function(event){
     this.proxy = $(document.createElement('div'))
@@ -31,7 +35,10 @@ $.widget("ui.drawable",$.extend({},$.ui.mouse,{
     this._trigger('proxy_create',event,{drawable:this,proxy:this.proxy});
   },
   /**
+   * @function {protected jQuery.ui.drawable} _mouseDrag
    * Implementation of _mouseDrag.  This adjusts the size of the proxy
+   * @param {Event} event
+   * jQuery UI event object
    */
   _mouseDrag : function(event){
     var new_dimensions = {
@@ -46,6 +53,14 @@ $.widget("ui.drawable",$.extend({},$.ui.mouse,{
       this.proxy.css(new_dimensions);
     }
   },
+  /**
+   * @function {public jQuery.ui.drawable} get_position_from_start
+   * Get the x,y difference between the position of the mouse when the drag started
+   * and its current position
+   * @param {Event} event
+   * jQuery UI event object
+   * @return {x : (int), y : (int)}
+   */
   get_position_from_start : function(event){
     return {
       x : this.original_position.x < event.pageX,
@@ -53,8 +68,8 @@ $.widget("ui.drawable",$.extend({},$.ui.mouse,{
     }
   },
  /**
-  * Set up the padding for the element
-  * 
+  * @function {protected jQuery.ui.drawable} _set_padding
+  * Helper function to set up the padding for the 'drawable' element
   */
   _set_padding : function(){
     this.options.padding = this.options.padding || {}
@@ -73,8 +88,10 @@ $.widget("ui.drawable",$.extend({},$.ui.mouse,{
     }
   },
   /**
-   * @param event Event
+   * @function {protected jQuery.ui.drawable} _get_drag_height
    * Determine the height of the proxy based on its current height and the drag event
+   * @param {Event} event
+   * jQuery UI event object
    */
   _get_drag_height : function(event){
     var height = this.proxy.height();
@@ -89,11 +106,11 @@ $.widget("ui.drawable",$.extend({},$.ui.mouse,{
 
     return height
   },
-  /*
   /**
-   * @param event Event
-   * 
-   * Determine the width of the proxy based on its current width and the drag event
+   * @function {protected jQuery.ui.drawable} _get_drag_width
+   * Determine the height of the proxy based on its current width and the drag event
+   * @param {Event} event
+   * jQuery UI event object
    */
   _get_drag_width : function(event){
     var width = this.proxy.width();
@@ -107,19 +124,30 @@ $.widget("ui.drawable",$.extend({},$.ui.mouse,{
     var grid_blocks = Math.ceil(width / this.options.grid[0]) 
     return (grid_blocks * this.options.grid[0]) - grid_blocks;
   },
+  /**
+   * @function {public jQuery.ui.drawable} get_top_offset
+   * Determine the current top offset of the proxy relative to the 'drawable' element
+   * @return top offset as an integer
+   */
   get_top_offset : function(){
     return this.proxy.offset().top - this.element.offset().top - this.options.padding.top;
   },
+  /**
+   * @function {public jQuery.ui.drawable} get_bottom_offset
+   * Determine the current bottom offset of the proxy relative to the 'drawable' element
+   * @return bottom offset as an integer
+   */
   get_bottom_offset : function(){
     return this.proxy.offset().top + this.proxy.height() - this.element.offset().top - this.options.padding.top
   },
  /**
-  * @param event Event
-  * 
+  * @function {protected jQuery.ui.drawable} _get_drag_top_position
   * Get the new top position for the proxy based on the current position and the drag
   * event.  If the mouse is above the initial click point, we adjust top upwards so
   * that we can drag further up.  If it is below, we keep it the same.  In either case, we use the 
   * grid settings to snap into place
+  * @param {Event} event
+  * jQuery UI event object
   */ 
   _get_drag_top_position : function(event){
       var top = parseInt(this.proxy.css('top'));
@@ -136,12 +164,12 @@ $.widget("ui.drawable",$.extend({},$.ui.mouse,{
       return top;
   },
   /**
-   * @param event Event
-   * 
+   * @function {protected jQuery.ui.drawable} _get_drag_left_position
    * Get the new left position for the proxy based on the current position and the drag event.  If 
    * the mouse is left of the initial click point, we adjust left along with the mouse so that a left
    * drag is possible.  We use the grid settings to snap into place
-   * 
+   * @param {Event} event
+   * jQuery UI event object
    */
   _get_drag_left_position : function(event){
     var left = parseInt(this.proxy.css('left'));
@@ -181,7 +209,10 @@ $.widget("ui.drawable",$.extend({},$.ui.mouse,{
     return true;
   },
   /**
+   * @function {protected jQuery.ui.drawable} _mouseStop
    * Implementation of _mouseStop
+   * @param {Event} event
+   * jQuery UI event object
    */
   _mouseStop : function(event){
     this._trigger('drawn', event, {drawable:this,proxy:this.proxy});

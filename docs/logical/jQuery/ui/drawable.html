@@ -1,0 +1,665 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Project name not specified</title>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <script>
+
+			(function()
+			{
+			    var loc = window.location.protocol + '//' + window.location.hostname + window.location.pathname;
+                loc = loc.split('\\');
+                loc = loc.join('/');					    
+			    loc = loc.split('/');
+			    loc.pop();
+			    loc = loc.join('/');
+			    loc += '/' + '../../../';
+			
+			    document.write("<base href='" + loc + "'></base>");
+			})();
+         
+        </script>
+
+        <link rel="stylesheet" type="text/css" href="jgdoc.css">
+        <link rel="stylesheet" type="text/css" href="theme.css">
+        	    <script type="text/javascript" src="navTree.js"></script>
+	    <script type="text/javascript" src="jgdoc.js"></script>
+	</head>
+    <body>
+        <div class="startup" id="startup">
+            <div class="banner" id="banner">
+                <h1 class="projectName">
+	               <a href=".">Project name not specified</a>   
+                </h1>
+                <div class="bar">
+	                 version Version not specified
+	            </div>
+	         </div>
+             <div class="content" id="docContent">
+                  <div class="block">
+                        <div id="searchBlock">
+			                <div class="search" >
+			                    <div class="searchLabel">Search:</div>
+			                    <div class="searchBlock" style="height:100%">
+					                <input id="jgsSearchString" type="text" size="60" class="jgdSearchString"/>
+					                <div id="jgsSearchPanel" class="jgsSearchPanel" style="display:none">
+						                <div  class="jgdSearchRect" >
+						                    <div id="jgsSearchResults">
+						                        Loading....
+						                    </div>
+						                </div>
+					                   <div id="jgsInfo" class="jgsInfo" >No selection</div>
+                                    </div>
+                                 </div>
+			                </div>
+		                </div>
+		                <div id="docScroll" class="docScroll">
+		                    <div>
+			                    <hr/>
+						        <div>
+						        						        		<H2>
+        <span class="objType">Class</span> jQuery.ui.drawable
+    </H2>
+        <div class="extends">
+        <span class="descSection">Extends </span>
+                     jQuery.ui.mouse
+ Draw new blocks dragging across multiple columns and then creating a single block and repainting
+ Implemented as a jQuery UI plugin            </div>                                      
+
+
+    <hr/>
+    <!-- description -->
+    <div>
+       <code>
+            <span class="modifiers"></span>
+            <span class="objType">class</span> 
+            <b>jQuery.ui.drawable</b>
+       </code>
+    </div>
+                <div class="comment">
+ </div>
+                                            <span class="definedIn">Defined in </span>
+        <a href="physical/file-ui/drawable.js.html">ui.drawable.js</a>
+        <hr/> 
+    <p />
+    
+            	
+                                
+                    
+    
+                    
+                <div class="summaryTable constructor">
+            <div class="summaryTableHeader">
+                <span class="objType">Constructor</span> Summary
+            </div>
+                    <div class="summaryItem">
+                                                           <div class="summaryItemDef">
+                <span class="modifiers"></span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#____init"><span class="elementName">_init</span></a>()
+            </div>
+        <div class="summaryItemDesc">
+        Initialize the element, add a class and call _mouseInit()    </div>  
+                            </div>
+                </div>
+        <p/>
+        
+                <div class="summaryTable function">
+            <div class="summaryTableHeader">
+                <span class="objType">Function</span> Summary
+            </div>
+                    <div class="summaryItem">
+                                                                    <div class="summaryItemDef">
+                <span class="modifiers">protected</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#____get_drag_height"><span class="elementName">_get_drag_height</span></a>
+                (<span class="type">Event</span>
+ event)
+            </div>          
+                <div class="summaryItemDesc">
+        Determine the height of the proxy based on its current height and the drag event    </div>  
+                            </div>
+                    <div class="summaryItem">
+                                                                    <div class="summaryItemDef">
+                <span class="modifiers">protected</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#____get_drag_left_position"><span class="elementName">_get_drag_left_position</span></a>
+                (<span class="type">Event</span>
+ event)
+            </div>          
+                <div class="summaryItemDesc">
+        Get the new left position for the proxy based on the current position and the drag event.  If 
+ the mouse is left of the initial click point, we adjust left along with the mouse so that a left
+ drag is possible.  We use the grid settings to snap into place    </div>  
+                            </div>
+                    <div class="summaryItem">
+                                                                    <div class="summaryItemDef">
+                <span class="modifiers">protected</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#____get_drag_top_position"><span class="elementName">_get_drag_top_position</span></a>
+                (<span class="type">Event</span>
+ event)
+            </div>          
+                <div class="summaryItemDesc">
+        Get the new top position for the proxy based on the current position and the drag
+ event.  If the mouse is above the initial click point, we adjust top upwards so
+ that we can drag further up.  If it is below, we keep it the same.  In either case, we use the 
+ grid settings to snap into place    </div>  
+                            </div>
+                    <div class="summaryItem">
+                                                                    <div class="summaryItemDef">
+                <span class="modifiers">protected</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#____get_drag_width"><span class="elementName">_get_drag_width</span></a>
+                (<span class="type">Event</span>
+ event)
+            </div>          
+                <div class="summaryItemDesc">
+        Determine the height of the proxy based on its current width and the drag event    </div>  
+                            </div>
+                    <div class="summaryItem">
+                                                                    <div class="summaryItemDef">
+                <span class="modifiers">protected</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#____mouseDrag"><span class="elementName">_mouseDrag</span></a>
+                (<span class="type">Event</span>
+ event)
+            </div>          
+                <div class="summaryItemDesc">
+        Implementation of _mouseDrag.  This adjusts the size of the proxy    </div>  
+                            </div>
+                    <div class="summaryItem">
+                                                                    <div class="summaryItemDef">
+                <span class="modifiers">protected</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#____mouseStart"><span class="elementName">_mouseStart</span></a>
+                (<span class="type">Event</span>
+ event)
+            </div>          
+                <div class="summaryItemDesc">
+        Implementation of _mouseStart
+  Create our drag proxy and position it according to the mouse position
+  Also record the original position    </div>  
+                            </div>
+                    <div class="summaryItem">
+                                                                    <div class="summaryItemDef">
+                <span class="modifiers">protected</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#____mouseStop"><span class="elementName">_mouseStop</span></a>
+                (<span class="type">Event</span>
+ event)
+            </div>          
+                <div class="summaryItemDesc">
+        Implementation of _mouseStop    </div>  
+                            </div>
+                    <div class="summaryItem">
+                                                           <div class="summaryItemDef">
+                <span class="modifiers">protected</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#____set_padding"><span class="elementName">_set_padding</span></a>()
+            </div>
+        <div class="summaryItemDesc">
+        Helper function to set up the padding for the 'drawable' element    </div>  
+                            </div>
+                    <div class="summaryItem">
+                                                           <div class="summaryItemDef">
+                <span class="modifiers">public</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#___get_bottom_offset"><span class="elementName">get_bottom_offset</span></a>()
+            </div>
+        <div class="summaryItemDesc">
+        Determine the current bottom offset of the proxy relative to the 'drawable' element    </div>  
+                            </div>
+                    <div class="summaryItem">
+                                                                    <div class="summaryItemDef">
+                <span class="modifiers">public</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#___get_position_from_start"><span class="elementName">get_position_from_start</span></a>
+                (<span class="type">Event</span>
+ event)
+            </div>          
+                <div class="summaryItemDesc">
+        Get the x,y difference between the position of the mouse when the drag started
+ and its current position    </div>  
+                            </div>
+                    <div class="summaryItem">
+                                                           <div class="summaryItemDef">
+                <span class="modifiers">public</span>
+                <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                <a href="logical/jQuery/ui/drawable.html#___get_top_offset"><span class="elementName">get_top_offset</span></a>()
+            </div>
+        <div class="summaryItemDesc">
+        Determine the current top offset of the proxy relative to the 'drawable' element    </div>  
+                            </div>
+                </div>
+        <p/>
+                
+                    <!-- ============== Details coming here =================== -->
+    	    	    	            <div class="details constructor">
+            <h2 class="sectionHeader">Constructor Details</h2>
+                                                                    <h3>
+        <a name="____init">
+            <span class="objType">constructor</span>
+            <span class="objName">_init</span>            
+        </a> 
+    </h3>
+                <div>
+                <code>
+                    <span class="modifiers"></span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    _init()
+                </code>
+            </div>    
+        <div class="comment">
+        Initialize the element, add a class and call _mouseInit()
+
+     </div>
+                                                    <hr/>       
+                                    </div>
+    	            <div class="details function">
+            <h2 class="sectionHeader">Function Details</h2>
+                                                                    <h3>
+        <a name="____get_drag_height">
+            <span class="objType">function</span>
+            <span class="objName">_get_drag_height</span>            
+        </a> 
+    </h3>
+                        <div>
+                <code>
+                    <span class="modifiers">protected</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    _get_drag_height(<span class="type">Event</span>
+ event)
+                </code> 
+            </div>          
+                <div class="comment">
+        Determine the height of the proxy based on its current height and the drag event
+
+     </div>
+        	<div class="parameters">
+        <span class="descSection">Parameters:</span><br/>
+                            <div>
+                    <div class="paramset"></div>
+                    <div>
+                                                <div class="param paddedDetails">
+        <code>
+            event        </code>
+        
+ jQuery UI event object            </div>   
+                                        </div>
+                </div>
+                    </div>
+                                                    <hr/>       
+                                                                                    <h3>
+        <a name="____get_drag_left_position">
+            <span class="objType">function</span>
+            <span class="objName">_get_drag_left_position</span>            
+        </a> 
+    </h3>
+                        <div>
+                <code>
+                    <span class="modifiers">protected</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    _get_drag_left_position(<span class="type">Event</span>
+ event)
+                </code> 
+            </div>          
+                <div class="comment">
+        Get the new left position for the proxy based on the current position and the drag event.  If 
+ the mouse is left of the initial click point, we adjust left along with the mouse so that a left
+ drag is possible.  We use the grid settings to snap into place
+
+     </div>
+        	<div class="parameters">
+        <span class="descSection">Parameters:</span><br/>
+                            <div>
+                    <div class="paramset"></div>
+                    <div>
+                                                <div class="param paddedDetails">
+        <code>
+            event        </code>
+        
+ jQuery UI event object            </div>   
+                                        </div>
+                </div>
+                    </div>
+                                                    <hr/>       
+                                                                                    <h3>
+        <a name="____get_drag_top_position">
+            <span class="objType">function</span>
+            <span class="objName">_get_drag_top_position</span>            
+        </a> 
+    </h3>
+                        <div>
+                <code>
+                    <span class="modifiers">protected</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    _get_drag_top_position(<span class="type">Event</span>
+ event)
+                </code> 
+            </div>          
+                <div class="comment">
+        Get the new top position for the proxy based on the current position and the drag
+ event.  If the mouse is above the initial click point, we adjust top upwards so
+ that we can drag further up.  If it is below, we keep it the same.  In either case, we use the 
+ grid settings to snap into place
+
+     </div>
+        	<div class="parameters">
+        <span class="descSection">Parameters:</span><br/>
+                            <div>
+                    <div class="paramset"></div>
+                    <div>
+                                                <div class="param paddedDetails">
+        <code>
+            event        </code>
+        
+ jQuery UI event object            </div>   
+                                        </div>
+                </div>
+                    </div>
+                                                    <hr/>       
+                                                                                    <h3>
+        <a name="____get_drag_width">
+            <span class="objType">function</span>
+            <span class="objName">_get_drag_width</span>            
+        </a> 
+    </h3>
+                        <div>
+                <code>
+                    <span class="modifiers">protected</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    _get_drag_width(<span class="type">Event</span>
+ event)
+                </code> 
+            </div>          
+                <div class="comment">
+        Determine the height of the proxy based on its current width and the drag event
+
+     </div>
+        	<div class="parameters">
+        <span class="descSection">Parameters:</span><br/>
+                            <div>
+                    <div class="paramset"></div>
+                    <div>
+                                                <div class="param paddedDetails">
+        <code>
+            event        </code>
+        
+ jQuery UI event object            </div>   
+                                        </div>
+                </div>
+                    </div>
+                                                    <hr/>       
+                                                                                    <h3>
+        <a name="____mouseDrag">
+            <span class="objType">function</span>
+            <span class="objName">_mouseDrag</span>            
+        </a> 
+    </h3>
+                        <div>
+                <code>
+                    <span class="modifiers">protected</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    _mouseDrag(<span class="type">Event</span>
+ event)
+                </code> 
+            </div>          
+                <div class="comment">
+        Implementation of _mouseDrag.  This adjusts the size of the proxy
+
+     </div>
+        	<div class="parameters">
+        <span class="descSection">Parameters:</span><br/>
+                            <div>
+                    <div class="paramset"></div>
+                    <div>
+                                                <div class="param paddedDetails">
+        <code>
+            event        </code>
+        
+ jQuery UI event object            </div>   
+                                        </div>
+                </div>
+                    </div>
+                                                    <hr/>       
+                                                                                    <h3>
+        <a name="____mouseStart">
+            <span class="objType">function</span>
+            <span class="objName">_mouseStart</span>            
+        </a> 
+    </h3>
+                        <div>
+                <code>
+                    <span class="modifiers">protected</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    _mouseStart(<span class="type">Event</span>
+ event)
+                </code> 
+            </div>          
+                <div class="comment">
+        Implementation of _mouseStart
+  Create our drag proxy and position it according to the mouse position
+  Also record the original position
+
+      </div>
+        	<div class="parameters">
+        <span class="descSection">Parameters:</span><br/>
+                            <div>
+                    <div class="paramset"></div>
+                    <div>
+                                                <div class="param paddedDetails">
+        <code>
+            event        </code>
+        
+  jQuery UI event object            </div>   
+                                        </div>
+                </div>
+                    </div>
+                                                    <hr/>       
+                                                                                    <h3>
+        <a name="____mouseStop">
+            <span class="objType">function</span>
+            <span class="objName">_mouseStop</span>            
+        </a> 
+    </h3>
+                        <div>
+                <code>
+                    <span class="modifiers">protected</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    _mouseStop(<span class="type">Event</span>
+ event)
+                </code> 
+            </div>          
+                <div class="comment">
+        Implementation of _mouseStop
+
+     </div>
+        	<div class="parameters">
+        <span class="descSection">Parameters:</span><br/>
+                            <div>
+                    <div class="paramset"></div>
+                    <div>
+                                                <div class="param paddedDetails">
+        <code>
+            event        </code>
+        
+ jQuery UI event object            </div>   
+                                        </div>
+                </div>
+                    </div>
+                                                    <hr/>       
+                                                                                    <h3>
+        <a name="____set_padding">
+            <span class="objType">function</span>
+            <span class="objName">_set_padding</span>            
+        </a> 
+    </h3>
+                <div>
+                <code>
+                    <span class="modifiers">protected</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    _set_padding()
+                </code>
+            </div>    
+        <div class="comment">
+        Helper function to set up the padding for the 'drawable' element
+
+     </div>
+                                                    <hr/>       
+                                                                                    <h3>
+        <a name="___get_bottom_offset">
+            <span class="objType">function</span>
+            <span class="objName">get_bottom_offset</span>            
+        </a> 
+    </h3>
+                <div>
+                <code>
+                    <span class="modifiers">public</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    get_bottom_offset()
+                </code>
+            </div>    
+        <div class="comment">
+        Determine the current bottom offset of the proxy relative to the 'drawable' element
+
+     </div>
+            	<div class="returns">
+	        <span class="descSection">Returns:</span><br/>
+	        <div class="paddedDetails">
+	            	             bottom offset as an integer
+   	            	        </div>
+        </div>      
+                                                <hr/>       
+                                                                                    <h3>
+        <a name="___get_position_from_start">
+            <span class="objType">function</span>
+            <span class="objName">get_position_from_start</span>            
+        </a> 
+    </h3>
+                        <div>
+                <code>
+                    <span class="modifiers">public</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    get_position_from_start(<span class="type">Event</span>
+ event)
+                </code> 
+            </div>          
+                <div class="comment">
+        Get the x,y difference between the position of the mouse when the drag started
+ and its current position
+
+     </div>
+        	<div class="parameters">
+        <span class="descSection">Parameters:</span><br/>
+                            <div>
+                    <div class="paramset"></div>
+                    <div>
+                                                <div class="param paddedDetails">
+        <code>
+            event        </code>
+        
+ jQuery UI event object            </div>   
+                                        </div>
+                </div>
+                    </div>
+            	<div class="returns">
+	        <span class="descSection">Returns:</span><br/>
+	        <div class="paddedDetails">
+	            	             {x : (int), y : (int)}
+   	            	        </div>
+        </div>      
+                                                <hr/>       
+                                                                                    <h3>
+        <a name="___get_top_offset">
+            <span class="objType">function</span>
+            <span class="objName">get_top_offset</span>            
+        </a> 
+    </h3>
+                <div>
+                <code>
+                    <span class="modifiers">public</span>
+                    <span class="type"><a href="logical/jQuery/ui/drawable.html">jQuery.ui.drawable</a></span>
+                    get_top_offset()
+                </code>
+            </div>    
+        <div class="comment">
+        Determine the current top offset of the proxy relative to the 'drawable' element
+
+     </div>
+            	<div class="returns">
+	        <span class="descSection">Returns:</span><br/>
+	        <div class="paddedDetails">
+	            	             top offset as an integer
+   	            	        </div>
+        </div>      
+                                                <hr/>       
+                                    </div>
+    	    	                                    						        </div>
+        		          </div>			                    
+		                </div>
+        	       </div>
+             </div>
+             <div class="navigation" id="navigation">
+    <ul class="navContent">
+        <li>
+            <div class="navTree">
+                <h2 onclick="jgdoc.NavPanel.clicked(event)">
+                    <a href="javascript:jgdoc.NavPanel.dummy()">Navigation</a>
+                </h2>
+                <ul class="navContent2">
+                    <li>
+                        <div>
+                            <a class="openAll" href="javascript:jgdoc.NavTree.onOpenAll()">Open All</a>
+                            <a class="closeAll" href="javascript:jgdoc.NavTree.onCloseAll()">Close All</a>
+                        </div>
+                        <div>
+                            <ul id = "content" class="contents">
+                                Loading...
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <ul class="navContent closed">
+        <li>
+            <div class="fileTree">
+                <h2 onclick="jgdoc.NavPanel.clicked(event)">
+                    <a href="javascript:jgdoc.NavPanel.dummy()">Files</a>
+                </h2>
+                <ul class="navContent2">
+                    <li>
+                                                                                <div>
+                                <a href="physical/file-ui/drawable.js.html">ui.drawable.js</a>
+                            </div>                              
+                                                                        </li>
+                </ul>
+            </div>
+        </li>       
+    </ul>
+    <ul class="navContent closed">
+        <li>
+            <div class="moduleTree">
+                <h2 onclick="jgdoc.NavPanel.clicked(event)">
+                    <a href="javascript:jgdoc.NavPanel.dummy()">Modules</a>
+                </h2>
+                <ul class="navContent2">
+                    <li>
+                                            </li>
+                </ul>
+            </div>
+        </li>       
+    </ul>
+</div>  
+    
+		</div>	
+	</body>
+    <script type="text/javascript">
+        jgdoc.Searcher.start();
+        jgdoc.NavTree.initialize("jQuery.ui.drawable");
+    </script>			
+	<script type="text/javascript" src="jsindex.js">
+    </script>
+</html>
